@@ -1,0 +1,551 @@
+{
+  "searchendpoint": "https://platform.cloud.coveo.com/rest/search/",
+  "analyticsendpoint": "https://usageanalytics.coveo.com/rest/v15/analytics/",
+  "partialMatch": true,
+  "partialMatchKeywords": 4,
+  "partialMatchThreshold": "50%",
+  "timeBetweenVisits": 20,
+  "timeBetweenActions": 3,
+  "allowAnonymousVisits": true,
+  "anonymousThreshold": 0.5,
+  "orgName": "MFG - Sawstop",
+  "pipeline": "SawStop Full",
+  "defaultOriginLevel1": "SawStopFull",
+  "allowEntitlements": true,
+  "languages": [
+    "en",
+    "en",
+    "en",
+    "en",
+    "en",
+    "es"
+  ],
+  "globalfilter": "",
+  "randomGoodQueries": [
+    "setting up the fence",
+    "saw blade",
+    "circular saw",
+    "blade alignment",
+    "blade kerf",
+    "how fast does it stop",
+    "blade life",
+    "waxing the table",
+    "kickback prevention",
+    "sawstop",
+    "dust collection",
+    "saw blade life",
+    "angle cuts",
+    "maximum angle cut",
+    "attachments",
+    "converting to 220 volts",
+    "changing from 110 to 220",
+    "setting blade height",
+    "blade speed",
+    "proper fence alignment",
+    "compound cuts",
+    "table extensions",
+    "dado blade",
+    "biscuit joints",
+    "plug in or hard wired",
+    "installion advice",
+    "regular maintainence",
+    "maximum blade height",
+    "rip length",
+    "widest rip",
+    "how to cut a dado",
+    "extension tables for saw",
+    "what voltage is required",
+    "440 saw",
+    "three phase motor",
+    "converting from 220 to 440",
+    "change voltage",
+    "wet saw",
+    "sawstop"
+  ],
+  "randomBadQueries": [
+    "Get free products",
+    "how to get examples",
+    "Free shipping"
+  ],
+  "scenarios": [
+    {
+      "name": "SimpleSearchClick V1",
+      "weight": 50,
+      "events": [
+        {
+          "type": "SearchAndClick",
+          "arguments": {
+            "queryText": "change from 110v to 220v",
+            "docClickTitle": "Converting SawStop PCS 1.75 from 110v to 220v",
+            "probability": 0.90
+          }
+        }
+      ]
+    },
+    {
+      "name": "SimpleSearchClick V1-2",
+      "weight": 50,
+      "events": [
+        {
+          "type": "SearchAndClick",
+          "arguments": {
+            "queryText": "move to 220 volt from 110 volts",
+            "docClickTitle": "Converting SawStop PCS 1.75 from 110v to 220v",
+            "probability": 0.90
+          }
+        }
+      ]
+    },
+    {
+      "name": "SimpleSearchClick V1-3",
+      "weight": 50,
+      "events": [
+        {
+          "type": "SearchAndClick",
+          "arguments": {
+            "queryText": "swap the voltage from 110 volts to 220",
+            "docClickTitle": "Converting SawStop PCS 1.75 from 110v to 220v",
+            "probability": 0.90
+          }
+        }
+      ]
+    },
+    {
+      "name": "SimpleSearchClick V1-4",
+      "weight": 50,
+      "events": [
+        {
+          "type": "SearchAndClick",
+          "arguments": {
+            "queryText": "convert to 220v",
+            "docClickTitle": "Converting SawStop PCS 1.75 from 110v to 220v",
+            "probability": 0.90
+          }
+        }
+      ]
+    },
+    {
+      "name": "SimpleSearchClick V1-5",
+      "weight": 50,
+      "events": [
+        {
+          "type": "SearchAndClick",
+          "arguments": {
+            "queryText": "rewiring the PCS to 220 volts",
+            "docClickTitle": "Converting SawStop PCS 1.75 from 110v to 220v",
+            "probability": 0.90
+          }
+        }
+      ]
+    },
+    {
+      "name": "SimpleSearchClick V1-6",
+      "weight": 50,
+      "events": [
+        {
+          "type": "SearchAndClick",
+          "arguments": {
+            "queryText": "can you up the voltage on PCS 175",
+            "docClickTitle": "Converting SawStop PCS 1.75 from 110v to 220v",
+            "probability": 0.90
+          }
+        }
+      ]
+    },
+    {
+      "name": "SimpleSearchClick V1-7",
+      "weight": 50,
+      "events": [
+        {
+          "type": "SearchAndClick",
+          "arguments": {
+            "queryText": "re-wire to 220v on PCS",
+            "docClickTitle": "Converting SawStop PCS 1.75 from 110v to 220v",
+            "probability": 0.90
+          }
+        }
+      ]
+    },
+    {
+      "name": "SimpleSearchClick V1-8",
+      "weight": 50,
+      "events": [
+        {
+          "type": "SearchAndClick",
+          "arguments": {
+            "queryText": "change over power on PCS 175",
+            "docClickTitle": "Converting SawStop PCS 1.75 from 110v to 220v",
+            "probability": 0.90
+          }
+        }
+      ]
+    },
+    {
+      "name": "GQ -> C(60%)",
+      "weight": 60,
+      "events": [
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": 2,
+            "offset": 1,
+            "probability": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "name": "GQ -> C(45%) -> GQ -> C(50%)",
+      "weight": 20,
+      "events": [
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": 2,
+            "offset": 1,
+            "probability": 0.5,
+            "quickview": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GQ -> C(55%) -> GQ -> C(55%) -> GQ -> C(60%)",
+      "weight": 5,
+      "events": [
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.45
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mobile GQ -> C(40%) -> GQ -> C(50%) -> GQ -> C(60%)",
+      "weight": 4,
+      "useragent": "Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1",
+      "events": [
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.5
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mobile GQ -> C(40%) -> GQ -> C(50%) -> GQ -> C(60%)",
+      "weight": 3,
+      "useragent": "Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1",
+      "events": [
+        {
+          "type": "TabChange",
+          "arguments": {
+            "tabName": "Community",
+            "tabCQ": "@source==(&quot;FOG - SawStop&quot;)"
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.5
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "name": "GQ -> C(40%) -> GQ -> C(50%) -> GQ -> C(40%) -> GQ -> C(50%)",
+      "weight": 2,
+      "events": [
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.4
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 1,
+            "probability": 0.5
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.4
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 1,
+            "probability": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "name": "GQ -> C(40%) -> GQ -> C(50%) -> GQ -> C(40%) -> GQ -> C(50%) -> GQ -> C(50%)",
+      "weight": 1,
+      "events": [
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 1,
+            "probability": 0.4
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 2,
+            "probability": 0.5
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.4
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 0,
+            "probability": 0.5
+          }
+        },
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": -1,
+            "offset": 1,
+            "probability": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "name": "Facet Change 1",
+      "weight": 15,
+      "useragent": "Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Mobile Safari/537.36",
+      "events": [
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "FacetChange",
+          "arguments": {
+            "facetTitle": "concepts",
+            "facetField": "@concepts",
+            "facetValue": "accessories"
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": 1,
+            "offset": 1,
+            "probability": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "name": "Facet Change 2",
+      "weight": 5,
+      "useragent": "Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Mobile Safari/537.36",
+      "events": [
+        {
+          "type": "Search",
+          "arguments": {
+            "queryText": "",
+            "goodQuery": true
+          }
+        },
+        {
+          "type": "FacetChange",
+          "arguments": {
+            "facetTitle": "concepts",
+            "facetField": "@concepts",
+            "facetValue": "SawStop dealer"
+          }
+        },
+        {
+          "type": "Click",
+          "arguments": {
+            "docNo": 1,
+            "offset": 1,
+            "probability": 0.6
+          }
+        }
+      ]
+    }
+  ]
+}
